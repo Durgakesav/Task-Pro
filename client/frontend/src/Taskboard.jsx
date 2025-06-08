@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './'
+import './Taskboard.css'
 
 const Taskboard = () => {
   const { id } = useParams();
@@ -221,7 +221,7 @@ const Taskboard = () => {
           >
             {profilePic ? (
               <img
-                src={`https://task-pro-backend-bva5.onrender.com/${profilePic}`}
+                src={`/${profilePic}`}
                 alt="Profile"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
