@@ -1,0 +1,27 @@
+/* Full page container with background */
+.login-container {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #667eea, #764ba2); /* nice purple-blue gradient */
+  /* Or use a background image example:
+  background: url('/path/to/your/image.jpg') no-repeat center center/cover;
+  */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Style and size the form */
+.login-form {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+  max-width: 400px;
+  width: 100%;
+}
