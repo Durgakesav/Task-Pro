@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './'
+import './Taskboard.css'
 
 const Taskboard = () => {
   const { id } = useParams();
