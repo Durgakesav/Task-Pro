@@ -31,7 +31,7 @@ const Taskboard = () => {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/gettasksofuser/${id}`, {
+      const res = await axios.get(`https://task-pro-backend-bva5.onrender.com/api/gettasksofuser/${id}`, {
         headers: { Authorization: token },
       });
       setTasks(res.data);
@@ -48,7 +48,7 @@ const Taskboard = () => {
 
   const fetchUserProfile = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/getProfile/${id}`);
+      const res = await axios.get(`https://task-pro-backend-bva5.onrender.com/${id}`);
       setProfilePic(res.data.profile);
     } catch (err) {
       console.error("Failed to load profile pic:", err);
@@ -62,7 +62,7 @@ const Taskboard = () => {
     formData.append('profilePic', selectedFile);
 
     try {
-      await axios.post(`http://localhost:5000/api/uploadProfilepic/${id}`, formData);
+      await axios.post(`https://task-pro-backend-bva5.onrender.com/api/uploadProfilepic/${id}`, formData);
       await fetchUserProfile();
       alert('Profile picture uploaded successfully!');
     } catch (error) {
@@ -76,7 +76,7 @@ const Taskboard = () => {
     if (!nameOfTask || !work) return alert('Fill all fields');
 
     try {
-      await axios.post(`http://localhost:5000/api/addtasks/${id}`, {
+      await axios.post(`https://task-pro-backend-bva5.onrender.com/api/addtasks/${id}`, {
         nameOfTask,
         work
       }, {
@@ -92,7 +92,7 @@ const Taskboard = () => {
 
   const handleDelete = async (taskId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/deletetasks/${taskId}`, {
+      await axios.delete(`https://task-pro-backend-bva5.onrender.com/api/deletetasks/${taskId}`, {
         headers: { Authorization: token }
       });
       fetchTasks();
@@ -110,7 +110,7 @@ const Taskboard = () => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/updatework/${editTaskId}`, {
+      await axios.put(`https://task-pro-backend-bva5.onrender.com/api/updatework/${editTaskId}`, {
         nameOfTask: editTaskName,
         work: editTaskWork
       }, {
@@ -221,7 +221,7 @@ const Taskboard = () => {
           >
             {profilePic ? (
               <img
-                src={`http://localhost:5000/${profilePic}`}
+                src={`https://task-pro-backend-bva5.onrender.com/${profilePic}`}
                 alt="Profile"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />

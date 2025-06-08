@@ -12,7 +12,7 @@ function Signup() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/signup', { email, password });
+      await axios.post('https://task-pro-backend-bva5.onrender.com/signup', { email, password });
       alert('Signup successful. You can now log in.');
       navigate('/Login');
     } catch (err) {
